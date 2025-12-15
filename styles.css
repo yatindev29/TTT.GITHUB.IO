@@ -1,0 +1,286 @@
+/* --- CSS VARIABLES FOR THEMING --- */
+:root {
+    --bg-start: #1f2833;
+    --bg-end: #0b0c10;
+    --accent-color: #45a29e;
+    --text-color: #66fcf1;
+    --board-bg: #1f2833;
+    --cell-bg: #0b0c10;
+    --x-color: #f67280;
+    --o-color: #88d8b0;
+    --button-color: #45a29e;
+    --button-text: #0b0c10;
+    --footer-bg: #111;
+}
+
+/* --- THEME 1: LIGHT --- */
+.theme-light {
+    --bg-start: #f8f9fa;
+    --bg-end: #ffffff;
+    --accent-color: #007bff;
+    --text-color: #343a40;
+    --board-bg: #e9ecef;
+    --cell-bg: #ffffff;
+    --x-color: #dc3545;
+    --o-color: #28a745;
+    --button-color: #007bff;
+    --button-text: #ffffff;
+    --footer-bg: #ddd;
+}
+
+/* --- THEME 2: FOREST GREEN --- */
+.theme-forest {
+    --bg-start: #386641;
+    --bg-end: #6a994e;
+    --accent-color: #a7c957; 
+    --text-color: #f2e8cf; 
+    --board-bg: #4f772d;
+    --cell-bg: #212529; 
+    --x-color: #bc4749; 
+    --o-color: #70c4e8; 
+    --button-color: #a7c957;
+    --button-text: #212529;
+    --footer-bg: #345826;
+}
+
+/* --- THEME 3: OCEAN BLUE --- */
+.theme-ocean {
+    --bg-start: #0077b6;
+    --bg-end: #0096c7;
+    --accent-color: #90e0ef; 
+    --text-color: #ffffff;
+    --board-bg: #03045e; 
+    --cell-bg: #0077b6;
+    --x-color: #ffb300; 
+    --o-color: #ff0054; 
+    --button-color: #90e0ef;
+    --button-text: #03045e;
+    --footer-bg: #023e8a;
+}
+
+/* --- THEME 4: SUNSET ORANGE (NEW) --- */
+.theme-sunset {
+    --bg-start: #ff6e40;
+    --bg-end: #ffb38a;
+    --accent-color: #ff3d00;
+    --text-color: #3e2723;
+    --board-bg: #ffe0b2; 
+    --cell-bg: #ffccbc;
+    --x-color: #d81b60;
+    --o-color: #00bfa5;
+    --button-color: #ff3d00;
+    --button-text: #ffffff;
+    --footer-bg: #e65100;
+}
+
+/* --- THEME 5: MONOCHROME MINIMAL (NEW) --- */
+.theme-mono {
+    --bg-start: #333333;
+    --bg-end: #111111;
+    --accent-color: #88d8b0; 
+    --text-color: #eeeeee;
+    --board-bg: #222222;
+    --cell-bg: #444444;
+    --x-color: #f0f0f0; 
+    --o-color: #aaaaaa; 
+    --button-color: #88d8b0;
+    --button-text: #111111;
+    --footer-bg: #000000;
+}
+
+
+/* --- GLOBAL & LAYOUT STYLES --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    color: var(--text-color);
+    transition: background 0.5s, color 0.5s;
+    line-height: 1.6;
+    min-width: 320px;
+}
+
+/* --- NAVIGATION & HEADER --- */
+header {
+    background-color: var(--board-bg);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- MAIN GAME SECTION --- */
+#game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+#game-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--board-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    z-index: 10;
+}
+
+/* --- INFO SECTIONS --- */
+.info-section {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--board-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid var(--accent-color);
+    transition: border-left 0.5s;
+}
+
+.info-section h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.info-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-section ul li {
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--footer-bg);
+    color: #c5c6c7;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-links a {
+    margin: 0 10px;
+}
+
+/* --- GAME-SPECIFIC STYLES --- */
+#name-input-container { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 18px; color: var(--text-color); }
+#player-name { padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid var(--accent-color); background-color: var(--bg-start); color: var(--text-color); }
+#controls { display: flex; gap: 20px; margin-bottom: 20px; }
+#game-board { display: grid; grid-template-columns: repeat(3, 120px); grid-template-rows: repeat(3, 120px); gap: 8px; background-color: var(--board-bg); border: 8px solid var(--accent-color); border-radius: 15px; box-shadow: 0 0 30px rgba(70, 160, 158, 0.5); z-index: 10; }
+.cell { background-color: var(--cell-bg); display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: bold; cursor: pointer; color: var(--text-color); transition: background-color 0.2s, transform 0.1s; border-radius: 5px; }
+.cell:hover:not(.occupied):not(.winner) { background-color: var(--board-bg); transform: scale(1.03); }
+.cell.X { color: var(--x-color); } .cell.O { color: var(--o-color); }
+@keyframes growIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+.cell.X:not(.winner) { animation: growIn 0.3s ease-out; }
+.cell.O:not(.winner) { animation: fadeIn 0.4s ease-in; }
+@keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 var(--accent-color); } 70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(69, 162, 158, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 var(--accent-color); } }
+.cell.winner { background-color: var(--accent-color) !important; color: var(--button-text) !important; animation: pulse 1s infinite; }
+#message { margin: 20px 0; font-size: 28px; font-weight: 700; color: var(--text-color); z-index: 10; }
+button { padding: 12px 25px; font-size: 18px; cursor: pointer; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 8px; transition: background-color 0.2s; margin-top: 15px; z-index: 10; }
+button:hover { background-color: var(--text-color); color: var(--button-color); }
+#confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+.confetti { position: absolute; width: 10px; height: 10px; background-color: var(--accent-color); opacity: 0; animation: fall 3s linear forwards; }
+@keyframes fall { 0% { transform: translate(0, -100px) rotate(0deg); opacity: 1; } 100% { transform: translate(var(--x-end), var(--y-end)) rotate(720deg); opacity: 0.5; } }
+
+/* --- NEW STYLES FOR SOUND & CONFETTI CONTROLS --- */
+#game-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Spacing between groups */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: var(--cell-bg); /* Use a distinct color for separation */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.setting-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#game-settings label {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Style for the toggle switch (basic) */
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-switch {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Checked state: Active color and slider position */
+.toggle-switch input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
